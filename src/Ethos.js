@@ -293,7 +293,7 @@ class Ethos {
     async getSections(jwt, academicPeriodId) {
 
         // banner let url = `https://integrate.elluciancloud.com/api/sections?criteria={ "academicPeriod" : "${academicPeriodId}"}`;
-        let url = `https://integrate.elluciancloud.com/api/sections?criteria={ "academicPeriod" :  { "id": "${academicPeriodId}"} }`;
+        let url = `https://integrate.elluciancloud.com/api/sections?criteria={ "academicPeriod" :  "${academicPeriodId}" }`;
 
         let result = await axios({
             method: 'get',
@@ -350,7 +350,7 @@ class Ethos {
     }
 
     async getInstructionalEvent(jwt, sectionId) {
-        let url = `https://integrate.elluciancloud.com/api/instructional-events?criteria={"section" : {"id" : "${sectionId}" }}`;
+        let url = `https://integrate.elluciancloud.com/api/instructional-events?criteria={"section" : "${sectionId}" }`;
 
         let result = await axios({
             method: 'get',
